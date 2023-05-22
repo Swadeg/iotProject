@@ -4,15 +4,14 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
-const ipAddress = '192.168.69.28'; // Replace with the desired IP address
+const ipAddress = '192.168.1.14'; // Replace with the desired IP address
 const port = 10; // Specify the port number
 
 // Route to handle the POST request from the master node
 app.post('/receive-data', (req, res) => {
   const receivedData = req.body;
   console.log('Received data from node:', receivedData.node_id);
-  console.log('Temperature:', receivedData.temperature);
-  console.log('Humidity:', receivedData.humidity);
+  console.log('Message Data:', receivedData.msg_data);
 
   // You can perform any further processing or store the data in a database here
 
